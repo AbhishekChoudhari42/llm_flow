@@ -1,0 +1,35 @@
+{
+    "PROCESS": [
+      {
+        "type": "llm",
+        "model": "gemini-1.5-flash",
+        "prompt": "What is the capital of {USER_PARAM_1}, give one word only",
+        "status": null,
+        "output": null
+      },
+      {
+        "type": "mapper",
+        "exec": "function(input) { return input; }", 
+        "status": "",
+        "output": null,
+        "key": "CAPITAL"
+      },
+      {
+        "type": "llm",
+        "model": "gemini-1.5-flash",
+        "prompt": "Give information about {PREV_OUTPUT}",
+        "status": "",
+        "output": null
+      },
+      {
+        "type": "switch",
+        "parameter": "SOUTH",
+        "switch": "function (Direction) { switch (Direction) { case 'SOUTH': return [{ type: 'llm', model: 'gemini-1.5-flash', prompt: 'Write poem about SOUTH {CAPITAL}', status: null, output: null }]; case 'WEST': return [{ type: 'llm', model: 'gemini-1.5-flash', prompt: 'Give information about WEST {CAPITAL}', status: null, output: null }, { type: 'llm', model: 'gemini-1.5-flash', prompt: 'Give information about NORTH {CAPITAL}', status: null, output: null }]; default: return null; } }"
+    }
+    
+    ],
+    "VARIABLES": {
+      "USER_PARAM_1": "India"
+    }
+  }
+  
