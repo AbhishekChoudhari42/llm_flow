@@ -7,10 +7,16 @@
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "@hono/node-server": "^1.13.4",
+    "dotenv": "^16.4.5",
     "hono": "^4.6.8"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
     "tsx": "^4.7.1"
-  }
+  },
+  "version": "1.0.0",
+  "description": "```\r npm install\r npm run dev\r ```",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

@@ -1,5 +1,7 @@
 import type { Process } from "./types.ts"; 
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { config } from 'dotenv'
+config()
 // delay
 const delay = (ms:number) => new Promise((resolve) => setTimeout(resolve, ms));
 
