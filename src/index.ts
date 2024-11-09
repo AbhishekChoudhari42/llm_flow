@@ -43,7 +43,7 @@ app.get('/flow/:user_id', async (c) => {
 });
 
 //Runs the flow 
-app.post("/", async (c) => {
+app.post("/flow/run", async (c) => {
   try {
     const { PROCESS, VARIABLES } = await c.req.json();
     console.log({ PROCESS, VARIABLES });
